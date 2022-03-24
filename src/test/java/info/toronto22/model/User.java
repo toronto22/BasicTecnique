@@ -1,4 +1,4 @@
-package info.toronto22.how_to_assert_two_objects_with_assertj.model;
+package info.toronto22.model;
 
 public class User {
     String name;

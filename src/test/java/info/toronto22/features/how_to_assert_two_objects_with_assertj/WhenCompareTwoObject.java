@@ -1,7 +1,7 @@
-package info.toronto22.how_to_assert_two_objects_with_assertj.feature;
+package info.toronto22.features.how_to_assert_two_objects_with_assertj;
 
 
-import info.toronto22.how_to_assert_two_objects_with_assertj.model.User;
+import info.toronto22.model.User;
 import net.serenitybdd.junit5.SerenityTest;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
