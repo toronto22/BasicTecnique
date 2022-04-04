@@ -3,6 +3,8 @@ package info.toronto22.features.how_to_assert_two_list_with_assertj.list_integer
 import net.serenitybdd.junit5.SerenityTest;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SerenityTest
+@Execution(ExecutionMode.CONCURRENT)
 public class WhenCompareTwoListIntegerIgnoreOrder {
     static List<Integer> firstList = new ArrayList<>();
     static List<Integer> secondList = new ArrayList<>();

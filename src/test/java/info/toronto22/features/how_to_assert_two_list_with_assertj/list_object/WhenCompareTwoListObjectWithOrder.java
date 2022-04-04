@@ -4,6 +4,8 @@ import info.toronto22.model.User;
 import net.serenitybdd.junit5.SerenityTest;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,18 +44,21 @@ public class WhenCompareTwoListObjectWithOrder {
     }
 
     @Test
+    @Execution(ExecutionMode.CONCURRENT)
     public void compare_with_order_with_2_equal_lists_have_same_order(){
         assertThat(firstList).usingRecursiveComparison()
                 .isEqualTo(thirdList);
     }
 
     @Test
+    @Execution(ExecutionMode.SAME_THREAD)
     public void compare_with_order_with_2_equal_lists_have_different_order(){
         assertThrows(AssertionError.class,
                 ()-> assertThat(firstList).usingRecursiveComparison()
                         .isEqualTo(secondList));
     }
     @Test
+    @Execution(ExecutionMode.CONCURRENT)
     public void compare_with_order_with_2_different_lists(){
         assertThrows(AssertionError.class,
                 ()-> assertThat(firstList).usingRecursiveComparison()

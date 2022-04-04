@@ -4,6 +4,8 @@ import info.toronto22.model.User;
 import net.serenitybdd.junit5.SerenityTest;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SerenityTest
+@Execution(ExecutionMode.CONCURRENT)
 public class WhenCompareTwoListObjectIgnoreOrder {
     static List<User> firstList = new ArrayList<>();
     static List<User> secondList = new ArrayList<>();
